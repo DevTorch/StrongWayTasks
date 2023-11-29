@@ -5,13 +5,11 @@ package com.walking.intensive.chapter1.task1;
  */
 public class Task1 {
     public static void main(String[] args) {
-//        Для собственных проверок можете делать любые изменения в этом методе
         //int age = 0;
         for (int age = 500; age <= 700; age++){
         System.out.println(getAgeString(age));
         }
     }
-
     static String getAgeString(int age) {
         String tail = "";
         int lastChar = age % 10;
@@ -26,8 +24,7 @@ public class Task1 {
         } else  if (lastChar >= 2 && lastChar <= 4){
             tail = " года";
         }
-//        Место для вашего кода
 
-        return "Вам " + age + tail; // Заглушка. При реализации - удалить
+        return "Вам " + age + tail;
     }
 }
