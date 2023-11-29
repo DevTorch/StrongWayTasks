@@ -6,14 +6,28 @@ package com.walking.intensive.chapter1.task1;
 public class Task1 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        int age = 0;
-
+        //int age = 0;
+        for (int age = 500; age <= 700; age++){
         System.out.println(getAgeString(age));
+        }
     }
 
     static String getAgeString(int age) {
+        String tail = "";
+        int lastChar = age % 10;
+        int doubleDec = age % 100;
+        String temp = String.valueOf(age);
+
+        //if (temp.charAt(temp.length()-1) == '0' || (age > 4 && age < 20)){
+        if (lastChar == 0 || (lastChar > 4 && lastChar < 21) || (doubleDec > 4 && doubleDec < 21)){
+            tail = " лет";
+        } else if (lastChar == 1 && age % 100 !=11){
+            tail = " год";
+        } else  if (lastChar >= 2 && lastChar <= 4){
+            tail = " года";
+        }
 //        Место для вашего кода
 
-        return null; // Заглушка. При реализации - удалить
+        return "Вам " + age + tail; // Заглушка. При реализации - удалить
     }
 }
